@@ -65,8 +65,19 @@ summary(data)
 pairs(data[, 1:10])
 Pause()
 
+##### From here down is specific to exercise 8 #####
 # 8(c) iii.
-data$Private = as.factor(data$Private)
+data$Private <- as.factor(data$Private)
 plot(data$Private, data$Outstate, varwidth=T, xlab="Private", ylab="Outstate")
+Pause()
 
+# 8(c) iv.
+Elite <- rep("No", nrow(data))  # Replicate "No" nrow times
+                                # -> creates new vector
+                                #    representing a column in the table.
+Elite[data$Top10perc > 50] <- "Yes"
+data <- data.frame(data, Elite)
+data$Elite <- as.factor(data$Elite)
+summary(data)
+plot(data$Elite, data$Outstate, varwidth=T, xlab="Elite", ylab="OutState")
 Pause()
