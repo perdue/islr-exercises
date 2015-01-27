@@ -79,5 +79,33 @@ Elite[data$Top10perc > 50] <- "Yes"
 data <- data.frame(data, Elite)
 data$Elite <- as.factor(data$Elite)
 summary(data)
-plot(data$Elite, data$Outstate, varwidth=T, xlab="Elite", ylab="OutState")
+plot(data$Elite, data$Outstate, varwidth=T, xlab="Elite", ylab="Outstate")
+Pause()
+
+# 8(c) v.
+n.breaks = 100
+par(mfrow=c(2,2))
+hist(data$Apps, breaks=n.breaks, xlab="Number of applications received")
+hist(data$Accept, breaks=n.breaks, xlab="Number of applicants accepted")
+hist(data$Enroll, breaks=n.breaks, xlab="Number of new students enrolled")
+hist(data$Top10perc, breaks=n.breaks,
+     xlab="New students from top 10% of HS class")
+Pause()
+hist(data$Top25perc, breaks=n.breaks,
+     xlab="New students from top 25% of HS class")
+hist(data$F.Undergrad, breaks=n.breaks, xlab="Number of full-time u-grads")
+hist(data$P.Undergrad, breaks=n.breaks, xlab="Number of part-time u-grads")
+hist(data$Outstate, breaks=n.breaks, xlab="Out-of-state tuition")
+Pause()
+hist(data$Room.Board, breaks=n.breaks, xlab="Room and board costs")
+hist(data$Books, breaks=n.breaks, xlab="Estimated book costs")
+hist(data$Personal, breaks=n.breaks, xlab="Estimated personal spending")
+hist(data$PhD, breaks=n.breaks, xlab="Percent of faculty with PhDs")
+Pause()
+hist(data$S.F.Ratio, breaks=n.breaks, xlab="Student-to-faculty ratio")
+hist(data$perc.alumni, breaks=n.breaks,
+     xlab="Percentage of alumni who donate")
+hist(data$Expend, breaks=n.breaks,
+     xlab="Instructional expenditure per student")
+hist(data$Grad.Rate, breaks=n.breaks, xlab="Graduation rate")
 Pause()
