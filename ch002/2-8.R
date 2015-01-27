@@ -27,7 +27,7 @@ Pause <- function() {
 ################################################################################
 X11()  # Start graphics
 args <- commandArgs(T)
-fileName = args[1]
+file.name <- args[1]
 if (length(args) < 2) {
   showFix = TRUE
 } else if (args[2] == "nofix") {
@@ -40,10 +40,10 @@ if (length(args) < 2) {
 setwd(".")  # Set working dir.
 
 #printf("%s\n", dir(getwd()))  # Print working dir contents.
-printf("Reading from \"%s\"\n", fileName)
+printf("Reading from \"%s\"\n", file.name)
 
 # 8(a)
-data = read.csv(fileName)
+data = read.csv(file.name, header=T, na.strings="?")
 
 # 8(b)
 if (showFix) {
